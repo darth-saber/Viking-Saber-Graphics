@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viking Saber Graphics</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Orbitron (for headings) and Inter (for body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for neon effects and animations */
+        :root {
+            --bg-dark: #0a0a1a;
+            --neon-blue: #00eaff; /* Brighter cyan */
+            --neon-purple: #a020f0; /* Electric purple */
+            --neon-red: #ff3864; /* Vibrant red */
+            --neon-green: #39ff14; /* Bright green */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #e0e0e0; /* Off-white for readability */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Neon text shadow effect */
+        .neon-text-blue {
+            text-shadow: 0 0 5px var(--neon-blue),
+                         0 0 15px var(--neon-blue),
+                         0 0 30px var(--neon-blue);
+        }
+
+        .neon-text-red {
+            text-shadow: 0 0 5px var(--neon-red),
+                         0 0 15px var(--neon-red),
+                         0 0 30px var(--neon-red);
+        }
+
+        /* Neon box shadow effect */
+        .neon-shadow-blue {
+            box-shadow: 0 0 8px var(--neon-blue),
+                        0 0 20px var(--neon-blue);
+        }
+
+        .neon-shadow-red {
+            box-shadow: 0 0 8px var(--neon-red),
+                        0 0 20px var(--neon-red);
+        }
+
+        /* Keyframes for animations */
+        @keyframes pulse-glow {
+            0% { filter: drop-shadow(0 0 5px var(--neon-purple)); opacity: 0.15; }
+            50% { filter: drop-shadow(0 0 15px var(--neon-purple)) drop-shadow(0 0 30px var(--neon-purple)); opacity: 0.3; }
+            100% { filter: drop-shadow(0 0 5px var(--neon-purple)); opacity: 0.15; }
+        }
+
+        @keyframes text-glitch {
+            0% { transform: translate(0); opacity: 1; }
+            20% { transform: translate(-2px, 2px); opacity: 0.9; }
+            40% { transform: translate(3px, -1px); opacity: 1; }
+            60% { transform: translate(-1px, 3px); opacity: 0.8; }
+            80% { transform: translate(2px, -2px); opacity: 1; }
+            100% { transform: translate(0); opacity: 1; }
+        }
+
+        .glitch-active {
+            animation: text-glitch 0.1s infinite alternate;
+        }
+
+        /* SVG specific styling for neon glow */
+        .viking-axe-svg {
+            stroke: var(--neon-purple);
+            stroke-width: 1.5; /* Thicker stroke for better glow */
+            fill: none;
+            filter: drop-shadow(0 0 5px var(--neon-purple))
+                    drop-shadow(0 0 10px var(--neon-purple))
+                    drop-shadow(0 0 20px var(--neon-purple));
+            animation: pulse-glow 4s infinite ease-in-out;
+            transition: transform 0.1s ease-out; /* For parallax */
+        }
+
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HERO SECTION -->
+    <header id="home" class="relative min-h-screen flex flex-col justify-center items-center text-center p-4 overflow-hidden">
+        <!-- Background SVG Graphic with Parallax -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+            <svg class="viking-axe-svg w-3/4 md:w-1/2 lg:w-1/3 h-auto opacity-20" viewBox="0 0 100 100">
+                <!-- Stylized Viking Axe SVG Path -->
+                <path d="M50 5 L40 20 L45 25 L45 80 L55 80 L55 25 L60 20 Z M40 20 Q30 30 30 40 L35 50 L40 45 L40 20 Z M60 20 Q70 30 70 40 L65 50 L60 45 L60 20 Z M45 80 Q40 90 50 95 Q60 90 55 80 Z" />
+            </svg>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="absolute top-0 left-0 right-0 z-20 p-4 md:p-6 flex justify-between items-center bg-transparent">
+            <div class="text-2xl md:text-3xl font-orbitron font-bold neon-text-blue tracking-wider rounded-lg p-2">
+                VIKING SABER
+            </div>
+            <ul class="flex space-x-4 md:space-x-8 text-lg font-inter font-medium">
+                <li><a href="#about" class="hover:text-white transition duration-300 neon-text-red hover:neon-text-blue rounded-md px-3 py-1">About</a></li>
+                <li><a href="#portfolio" class="hover:text-white transition duration-300 neon-text-red hover:neon-text-blue rounded-md px-3 py-1">Portfolio</a></li>
+                <li><a href="#contact" class="hover:text-white transition duration-300 neon-text-red hover:neon-text-blue rounded-md px-3 py-1">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <h1 id="hero-title" class="text-5xl md:text-7xl lg:text-8xl font-orbitron font-bold uppercase mb-4 leading-tight neon-text-blue">
+                Unleash Your Brand's Fury
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-300 mb-8 tracking-wide">
+                Graphic Design & Digital Art with a Legendary Edge
+            </p>
+            <a href="#portfolio" class="inline-block px-8 py-4 text-xl font-bold uppercase tracking-wider rounded-lg
+                                        bg-transparent border-2 border-neon-red text-neon-red
+                                        hover:bg-neon-red hover:text-bg-dark transition duration-300
+                                        neon-shadow-red hover:neon-shadow-blue">
+                View My Work
+            </a>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-16 md:py-24 bg-gray-900 text-center px-4 rounded-lg shadow-lg m-4 md:m-8">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-orbitron font-bold mb-8 neon-text-green">About Me</h2>
+            <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">
+                Greetings, fellow travelers! I am [Your Name], a digital artisan forging visual narratives with the raw power of Viking sagas and the precision of a laser-etched circuit board. My craft lies in creating designs that not only capture attention but leave an indelible mark.
+            </p>
+            <p class="text-lg md:text-xl leading-relaxed text-gray-300">
+                From brand identities that roar with purpose to digital art that gleams with futuristic energy, I blend ancient strength with modern innovation. Let's embark on a creative raid to conquer your design challenges!
+            </p>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-16 md:py-24 bg-gray-800 px-4 rounded-lg shadow-lg m-4 md:m-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-orbitron font-bold text-center mb-12 neon-text-blue">My Forged Creations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl
+                            border-2 border-transparent hover:border-neon-red transition duration-300
+                            transform hover:-translate-y-2 hover:scale-105 group">
+                    <img src="https://placehold.co/600x400/1a1a2e/00eaff?text=Project+Alpha" alt="Project Alpha" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-orbitron font-bold mb-2 text-white group-hover:neon-text-red transition duration-300">Project Alpha: Brand Identity</h3>
+                        <p class="text-gray-300 text-base">A powerful brand identity for a tech startup, blending ancient runes with modern typography.</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl
+                            border-2 border-transparent hover:border-neon-red transition duration-300
+                            transform hover:-translate-y-2 hover:scale-105 group">
+                    <img src="https://placehold.co/600x400/1a1a2e/a020f0?text=Project+Beta" alt="Project Beta" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-orbitron font-bold mb-2 text-white group-hover:neon-text-red transition duration-300">Project Beta: Game UI/UX</h3>
+                        <p class="text-gray-300 text-base">Intuitive and visually stunning user interface for a cyberpunk RPG game.</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-xl
+                            border-2 border-transparent hover:border-neon-red transition duration-300
+                            transform hover:-translate-y-2 hover:scale-105 group">
+                    <img src="https://placehold.co/600x400/1a1a2e/ff3864?text=Project+Gamma" alt="Project Gamma" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-orbitron font-bold mb-2 text-white group-hover:neon-text-red transition duration-300">Project Gamma: Album Art</h3>
+                        <p class="text-gray-300 text-base">Dynamic and vibrant album cover art for an electronic music artist.</p>
+                    </div>
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-900 text-center px-4 rounded-lg shadow-lg m-4 md:m-8">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-orbitron font-bold mb-8 neon-text-green">Forge a Connection</h2>
+            <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-8">
+                Ready to unleash the power of compelling design for your next project? Let's connect and discuss how I can help bring your vision to life.
+            </p>
+            <form action="#" method="POST" class="space-y-6 text-left">
+                <div>
+                    <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name"
+                           class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white border border-gray-600
+                                  focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition duration-200">
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com"
+                           class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white border border-gray-600
+                                  focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition duration-200">
+                </div>
+                <div>
+                    <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Message:</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..."
+                              class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white border border-gray-600
+                                     focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition duration-200"></textarea>
+                </div>
+                <button type="submit" class="w-full px-6 py-3 text-xl font-bold uppercase tracking-wider rounded-lg
+                                            bg-transparent border-2 border-neon-green text-neon-green
+                                            hover:bg-neon-green hover:text-bg-dark transition duration-300
+                                            neon-shadow-blue hover:neon-shadow-red">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Viking Saber Graphics. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for interactive effects
+
+        // 1. Parallax effect for the background SVG
+        document.addEventListener('mousemove', (e) => {
+            const graphic = document.querySelector('.viking-axe-svg');
+            // Adjust sensitivity for a subtle effect
+            const x = (window.innerWidth / 2 - e.clientX) * 0.005;
+            const y = (window.innerHeight / 2 - e.clientY) * 0.005;
+            graphic.style.transform = `translate(-50%, -50%) perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+        });
+
+        // 2. Glitch effect for the hero title
+        const heroTitle = document.getElementById('hero-title');
+        let glitchInterval;
+
+        function startGlitch() {
+            glitchInterval = setInterval(() => {
+                heroTitle.classList.add('glitch-active');
+                setTimeout(() => {
+                    heroTitle.classList.remove('glitch-active');
+                }, 100); // Glitch duration
+            }, 7000); // Glitch every 7 seconds
+        }
+
+        // Start glitch effect after a short delay
+        setTimeout(startGlitch, 2000);
+
+        // Optional: Stop glitch on hover and restart on mouse leave
+        heroTitle.addEventListener('mouseenter', () => {
+            clearInterval(glitchInterval);
+            heroTitle.classList.remove('glitch-active');
+        });
+        heroTitle.addEventListener('mouseleave', startGlitch);
+
+        // 3. Smooth scrolling for navigation links (already handled by CSS `scroll-behavior: smooth;`)
+        // This JS is not strictly needed due to CSS, but can be used for more complex scroll animations.
+        // For this simple case, CSS is sufficient.
+    </script>
+</body>
+</html>
+
